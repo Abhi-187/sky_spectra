@@ -1,5 +1,19 @@
 import 'weather.dart';
 
+//intance for geetting data from api
+
+class WeatherDataCurrent {
+  final Current current;
+
+  WeatherDataCurrent(this.current);
+
+  factory WeatherDataCurrent.fromJson(Map<String, dynamic> json) {
+    return WeatherDataCurrent(
+      Current.fromJson(json['current']),
+    );
+  }
+}
+
 class Current {
   Current({
     required this.temp,
